@@ -1,2 +1,3 @@
-class Reservation < ApplicationRecord
+class Reservation < ApplicationRecord   
+    belongs_to :teachers
 end
