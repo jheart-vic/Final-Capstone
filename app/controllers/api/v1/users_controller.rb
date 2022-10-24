@@ -1,5 +1,4 @@
 class Api::V1::UsersController < ApplicationController
-    class UsersController < ApplicationController
         def index 
             @user = User.all
         end
@@ -37,7 +36,5 @@ class Api::V1::UsersController < ApplicationController
         def user_params
             params.require(:user).permit(:name)
         end
-    
-    end
     
 end
