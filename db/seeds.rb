@@ -10,3 +10,8 @@ User.create(name: 'Victor')
 User.create(name: 'Mentor')
 User.create(name: 'Doctor')
 User.create(name: 'Mortor')
+
+
+
+Teacher.create!(name: 'John Doe', title: 'Maths', photo: 'albrt.jpg')
+Teacher.create!(name: 'Chris', title: 'Geography', photo: 'albrt.jpg')
