@@ -1,6 +1,7 @@
 class Api::V1::TeachersController < ApplicationController
     def index 
-        @teacher = Teacher.all
+        @teachers = Teacher.all
+        render json: @teachers
     end
 
     def show
@@ -34,6 +35,6 @@ class Api::V1::TeachersController < ApplicationController
     private
 
     def teacher_params
-        params.require(:teacher).permit(:name, :title)
+        params.require(:teacher).permit(:name, :title, :photo)
     end
 end

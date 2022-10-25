@@ -1,13 +1,14 @@
 class Api::V1::ReservationsController < ApplicationController
     def index 
-        @reservation = Reservation.all
+        @reservations = Reservation.all
+        render json: @reservations
     end
 
     def show
         @reservation = Reservation.find(params[:id])
     end
 
-    def create 
+    def create
         @reservation = Reservation.new(reservation_params)
 
         if @reservation.save

@@ -1,7 +1,6 @@
 class Teacher < ApplicationRecord
     has_many :reservations, foreign_key:  :teacher_id, dependent:  :delete_all
+    has_one_attached :photo
 
-    belongs_to :user, class_name: 'User', foreign_key: :user_id
-
-    validates :name, :title, presence: true
+    validates :name, :title, :photo, presence: true
 end

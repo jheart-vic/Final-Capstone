@@ -2,5 +2,5 @@ class Reservation < ApplicationRecord
     belongs_to :teacher, class_name: 'Teacher'
     belongs_to :user, class_name: 'User'
 
-    validate :reservation_date, :city, presence: true
+    validates :reservation_date, :city, presence: true
 end
