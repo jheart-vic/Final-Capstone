@@ -1,39 +1,38 @@
 class Api::V1::TeachersController < ApplicationController
-    def index 
-        @teacher = Teacher.all
+  def index
+    @teachers = Teacher.all
+    render json: @teachers
+  end
+
+  def show
+    @teacher = Teacher.find(params[:id])
+  end
+
+  def create
+    @teacher = Teacher.new(teacher_params)
+
+    if @teacher.save
+      render json: @teacher, status: :created, data: @teacher
+    else
+      render json: @teacher.errors, status: :unprocessable_entity
     end
+  end
 
-    def show
-        @teacher = Teacher.find(params[:id])
+  def update
+    if @teacher.update(teacher_params)
+      render json: @teacher
+    else
+      render json: @teacher.errors, status: :unprocessable_entity
     end
+  end
 
-    def create 
-        @teacher = Teacher.new(teacher_params)
+  def destroy
+    @teacher.destroy
+  end
 
-        if @teacher.save
-            render json: @teacher, status: :created, data: @teacher
-        else  
-            render json: @teacher.errors, status: :unprocessable_entity
-        end 
-    end
+  private
 
-    def update 
-        if @teacher.update(teacher_params)
-            render json: @teacher
-        else  
-            render json: @teacher.errors, status: :unprocessable_entity
-        end
-    end
-
-    def destroy
-        @teacher.destroy
-    end
-
-
-
-    private
-
-    def teacher_params
-        params.require(:teacher).permit(:name, :title)
-    end
+  def teacher_params
+    params.require(:teacher).permit(:name, :title)
+  end
 end
