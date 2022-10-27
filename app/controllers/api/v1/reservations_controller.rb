@@ -1,6 +1,5 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
-    # @reservations = Reservation.all
     @reservations = current_user.reservations
     render json: @reservations
   end
@@ -10,9 +9,13 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
     @reservation = Reservation.new(reservation_params)
     @teachers = 
 
+=======
+    @reservation = current_user.reservations.new(reservation_params) 
+>>>>>>> 04e281dae1d21ea2891c50eba6dbc8d634b585b9
     if @reservation.save
       render json: @reservation, status: :created, data: @reservation
     else
@@ -35,6 +38,6 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:reservation_date, :city)
+    params.require(:reservation).permit(:reservation_date, :city, :teacher_id)
   end
 end
