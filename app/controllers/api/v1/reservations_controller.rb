@@ -9,13 +9,7 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
-    @reservation = Reservation.new(reservation_params)
-    @teachers = 
-
-=======
     @reservation = current_user.reservations.new(reservation_params) 
->>>>>>> 04e281dae1d21ea2891c50eba6dbc8d634b585b9
     if @reservation.save
       render json: @reservation, status: :created, data: @reservation
     else
