@@ -11,6 +11,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @teachers = 
 
     if @reservation.save
       render json: @reservation, status: :created, data: @reservation
@@ -34,6 +35,6 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:date, :city)
+    params.require(:reservation).permit(:reservation_date, :city)
   end
 end
