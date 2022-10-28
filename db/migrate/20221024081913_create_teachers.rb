@@ -4,9 +4,9 @@ class CreateTeachers < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :title
       t.string :photo
-      t.references :user, foreign_key: { to_table: :users }
 
       t.timestamps
     end
+    add_index :teachers, :name, unique: true
   end
 end
