@@ -5,11 +5,12 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
+    @reservation = current_user.reservations.find(params[:id])
+    render json: @reservation
   end
 
   def create
-    @reservation = current_user.reservations.new(reservation_params) 
+    @reservation = current_user.reservations.new(reservation_params)
     if @reservation.save
       render json: @reservation, status: :created, data: @reservation
     else
