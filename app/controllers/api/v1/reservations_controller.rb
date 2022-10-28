@@ -5,7 +5,8 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
+    @reservation = current_user.reservations.find(params[:id])
+    render json: @reservation
   end
 
   def create
