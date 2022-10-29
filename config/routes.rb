@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :reservations, only: [:index, :create, :destroy, :show]
-      resources :teachers, only: [:index, :create, :destroy, :show]
+      resources :reservations, only: [:index, :create, :destroy, :show, :update]
+      resources :teachers, only: [:index, :create, :destroy, :show, :update]
     end
   end
 end
