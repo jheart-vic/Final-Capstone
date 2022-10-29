@@ -3,7 +3,7 @@ class CreateTeachers < ActiveRecord::Migration[7.0]
     create_table :teachers do |t|
       t.string :name
       t.string :title
-      t.string :photo
+      t.string :photo, null: false
 
       t.timestamps
     end
