@@ -34,6 +34,6 @@ class Api::V1::TeachersController < ApplicationController
   private
 
   def teacher_params
-    params.require(:teacher).permit(:name, :title)
+    params.require(:teacher).permit(:name, :title, :photo)
   end
 end
