@@ -3,7 +3,7 @@ class CreateTeachers < ActiveRecord::Migration[7.0]
     create_table :teachers do |t|
       t.string :name
       t.string :title
-      t.string :photo, null: false, defalult: "https://img.icons8.com/ios-glyphs/344/person-male.png"
+      t.string :photo, null: false, default: "https://img.icons8.com/ios-glyphs/344/person-male.png"
 
       t.timestamps
     end
