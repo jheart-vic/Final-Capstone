@@ -10,18 +10,18 @@
 # Teacher.create(name: 'Wam', title: 'Pango')
 # Teacher.create(name: 'Man', title: 'Sango')
 
-  # Reservation.create(
-  #   user_id: 6,
-  #   city: "City 2",
-  #   teacher_id: 5,
-  #   reservation_date: Date.today
-  # )
-  # Reservation.create(
-  #   user_id: 6,
-  #   city: "City 1",
-  #   teacher_id: 6,
-  #   reservation_date: Date.today
-  # )
+  Reservation.create(
+    user_id: 6,
+    city: "City 2",
+    teacher_id: 5,
+    reservation_date: Date.today
+  )
+  Reservation.create(
+    user_id: 6,
+    city: "City 1",
+    teacher_id: 6,
+    reservation_date: Date.today
+  )
   # Reservation.create(
   #   user_id: 6,
   #   city: "City 4",
