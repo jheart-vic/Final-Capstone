@@ -1,12 +1,12 @@
 class Api::V1::ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show update destroy]
   def index
-    @reservations = current_user.reservations
+    @reservations = current_user.reservations.to_json(include: :teacher)
     render json: @reservations
   end
 
   def show
-    render json: @reservation
+    render json: @reservation..to_json(include: :teacher)
   end
 
   def create
