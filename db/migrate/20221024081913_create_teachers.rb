@@ -3,6 +3,8 @@ class CreateTeachers < ActiveRecord::Migration[7.0]
     create_table :teachers do |t|
       t.string :name
       t.string :title
+      t.string :work_experience
+      t.text  :bio
       t.string :photo, null: false
 
       t.timestamps
