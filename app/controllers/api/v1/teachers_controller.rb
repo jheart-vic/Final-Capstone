@@ -6,14 +6,14 @@ class Api::V1::TeachersController < ApplicationController
   end
 
   def show
-    render json: @teacher
+    render json: @teacher, status: :ok
   end
 
   def create
     @teacher = Teacher.new(teacher_params)
     @teacher.photo = 'https://img.icons8.com/ios-glyphs/344/person-male.png' if @teacher.photo.empty?
     if @teacher.save
-      render json: @teacher, status: :created, data: @teacher
+      render json: { data: 'Created Teacher Successfully', status: :ok }
     else
       render json: { data: @teacher.errors.full_messages, status: 'failed' }, status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class Api::V1::TeachersController < ApplicationController
 
   def update
     if @teacher.update(teacher_params)
-      render json: { data: @teacher, mesage: 'Updated Teacher Successfully', status: :ok }
+      render json: { data: 'Updated Teacher Successfully', status: :ok }
     else
       render json: { data: 'Successfully went wrong', status: 'failed' }
     end
@@ -42,6 +42,6 @@ class Api::V1::TeachersController < ApplicationController
   end
 
   def teacher_params
-    params.require(:teacher).permit(:name, :title, :photo)
+    params.require(:teacher).permit(:name, :title, :photo, :bio, :work_experience)
   end
 end

@@ -6,13 +6,13 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def show
-    render json: @reservation..to_json(include: :teacher)
+    render json: @reservation.to_json(include: :teacher)
   end
 
   def create
     @reservation = current_user.reservations.new(reservation_params)
     if @reservation.save
-      render json: @reservation, status: :created, data: @reservation
+      render json: { data: 'Created Reservation Successfully', status: :ok }
     else
       render json: @reservation.errors, status: :unprocessable_entity
     end
@@ -20,7 +20,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   def update
     if @reservation.update(reservation_params)
-      render json: { data: @reservation, mesage: 'Updated Reservation Successfully', status: :ok }
+      render json: { data: 'Updated Reservation Successfully', status: :ok }
     else
       render json: @reservation.errors, status: :unprocessable_entity
     end
