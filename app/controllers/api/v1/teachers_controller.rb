@@ -11,7 +11,7 @@ class Api::V1::TeachersController < ApplicationController
 
   def create
     @teacher = Teacher.new(teacher_params)
-    @teacher.photo = 'https://img.icons8.com/ios-glyphs/344/person-male.png' if @teacher.photo.empty?
+    @teacher.photo = 'https://img.icons8.com/ios-glyphs/344/person-male.png' if @teacher.photo.nil?
     if @teacher.save
       render json: { data: 'Created Teacher Successfully', status: :ok }
     else
