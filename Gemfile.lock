@@ -122,8 +122,6 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.9-arm64-darwin)
-      racc (~> 1.4)
     nokogiri (1.13.9-x64-mingw-ucrt)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -186,13 +184,8 @@ GEM
     websocket-extensions (0.1.5)
     zeitwerk (2.6.4)
 
-    nokogiri (1.11.3-x86_64-linux)
-      racc (~> 1.4)
-    nokogiri (1.11.4-x86_64-darwin)
-      racc (~> 1.4)
-    PLATFORMS
-      x86_64-darwin-20
-      x86_64-linux
+PLATFORMS
+  x64-mingw-ucrt
 
 DEPENDENCIES
   bootsnap
