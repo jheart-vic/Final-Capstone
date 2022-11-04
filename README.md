@@ -9,9 +9,9 @@
 - Languages: JavaScript, Ruby
 - Frameworks: Ruby On Rails, ReactJs
 
-## Live Demo (if available)
+## API Documentation
 
-[Live Demo Link](https://livedemo.com)
+[API Documentation](https://medium.com/@adebowalevictorjheart/teacher-appointment-api-documentation-3a55085fdcca)
 
 
 ## Getting Started
@@ -28,7 +28,7 @@
 ```bundle install``` to install all gem
 
 **To start the backend server run :**
-
+```Run rails db:create rails db:migrate```
 ```rail server / rails s```
 ***
 
